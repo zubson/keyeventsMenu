@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" autofocus placeholder="Search" class="form-control" ng-model="searchFilter" input-control id="search-input">
+        </div>
+    </div>
+    <br> <br>
+    <div class="row" id="listRow">
+        <div class="col-sm-6 col-md-4 " ng-repeat="item in apps = (items | filter: searchFilter)">
+            <div class="thumbnail list-items" tabindex="{{item.index}}" grid-control="">
+                <div class="caption">
+                    <h3>{{item.name}}</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4" ng-if="apps.length === 0">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>No item found</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
