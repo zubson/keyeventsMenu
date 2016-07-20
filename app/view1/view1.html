@@ -6,14 +6,13 @@
     </div>
     <br> <br>
     <div class="row" id="listRow">
-        <div class="col-sm-6 col-md-4 " ng-repeat="item in apps = (items | filter: searchFilter)">
-            <div class="thumbnail list-items" tabindex="{{item.index}}" grid-control="">
+        <div class="col-sm-6 col-md-4 " ng-repeat="item in apps = (items | filter: searchFilter)" >
+            <a class="thumbnail list-items" tabindex="{{$index}}" grid-control ng-class="{'first': $first, 'last': $last}" href="{{item.url}}">
                 <div class="caption">
                     <h3>{{item.name}}</h3>
                     <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-sm-6 col-md-4" ng-if="apps.length === 0">
             <div class="thumbnail">
